@@ -4,11 +4,29 @@ import { useNavigation } from '@react-navigation/native'
 
 import CustomButton from '../CustomButton/CustomButton'
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
+import { Formik } from 'formik';
+import auth from '@react-native-firebase/auth';
 
 import styles from './LoginArea.style'
 
+const initialFormValues = {
+  usermail: '',
+  password: '',
+};
+
 const LoginArea = () => {
   const navigation = useNavigation()
+
+  const handleFormSubmit = async (formValues) => {
+    try {
+       await auth().signInWithEmailAndPassword(
+            formValues.usermail,
+            formValues.password,
+        )
+    } catch (error) {
+        console.log(error)
+    }
+}
   
   return (
     <View style={styles.container}>
@@ -32,17 +50,26 @@ const LoginArea = () => {
         </View>
       </View>
       <View style={styles.textInputContainer}>
+      <Formik initialValues={initialFormValues} onSubmit={handleFormSubmit}>
+      {({handleChange, handleSubmit, values }) => (
+        <>
         <TextInput
           style={styles.textInput}
           placeholder='tc'
+          value={values.usermail} onChangeText={handleChange('usermail')}
         />
         <TextInput
           style={styles.textInput}
           placeholder='dijital şifre'
+          value={values.password} onChangeText={handleChange('password')}
+          secureTextEntry={true}
         />
         <View>
-          <CustomButton onPress={() => navigation.navigate('Root')} title={"Devam"} />
+          <CustomButton onPress={handleSubmit} title={"Devam"} />
         </View>
+        </>
+        )}
+        </Formik>
       </View>
       <View style={styles.registerContainer}>
         <Text style={styles.registerText}>Dijital Şifrem Yok/Unuttum</Text>
