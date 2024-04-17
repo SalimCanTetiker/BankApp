@@ -1,5 +1,6 @@
 import { View, Text, TextInput, Image } from 'react-native'
 import React from 'react'
+import { useNavigation } from '@react-navigation/native'
 
 import CustomButton from '../CustomButton/CustomButton'
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
@@ -7,6 +8,8 @@ import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
 import styles from './LoginArea.style'
 
 const LoginArea = () => {
+  const navigation = useNavigation()
+  
   return (
     <View style={styles.container}>
       <View style={styles.logo}>
@@ -38,7 +41,7 @@ const LoginArea = () => {
           placeholder='dijital şifre'
         />
         <View>
-          <CustomButton onPress={null} title={"Devam"} />
+          <CustomButton onPress={() => navigation.navigate('Root')} title={"Devam"} />
         </View>
       </View>
       <View style={styles.registerContainer}>
