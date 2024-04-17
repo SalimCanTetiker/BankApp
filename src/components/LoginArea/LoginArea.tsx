@@ -2,6 +2,7 @@ import { View, Text, TextInput, Image } from 'react-native'
 import React from 'react'
 
 import CustomButton from '../CustomButton/CustomButton'
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
 
 import styles from './LoginArea.style'
 
@@ -9,6 +10,9 @@ const LoginArea = () => {
   return (
     <View style={styles.container}>
       <View style={styles.logo}>
+        <View style={styles.icon}>
+        <Icon name="account-outline" size={36} color='white' />
+        </View>
         <Image
         source={require("../../assets/vakıfbankLogo.png")}
         style={styles.image}

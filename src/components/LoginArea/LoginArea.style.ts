@@ -8,6 +8,9 @@ const styles = StyleSheet.create({
         backgroundColor: "#fcba01",
         alignItems: "center"
     },
+    icon: {
+        right: 80
+    },
     logo: {
         flexDirection: "row",
         alignItems: "center"
@@ -22,8 +25,8 @@ const styles = StyleSheet.create({
         color: "white"
     },
     lan: {
-        left: 150,
-        bottom: 44
+        left: 160,
+        bottom: 42
     },
     loginContainer: {
         position: "absolute",
