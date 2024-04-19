@@ -3,7 +3,8 @@ import { Pressable } from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
 
-import HomePage from '../screens/HomePage/HomePage';
+import LogoutPage from '../screens/LogoutPage/LogoutPage';
+import HomeStack from './HomeStack';
 
 const Tab = createBottomTabNavigator()
 
@@ -11,7 +12,7 @@ const RootNavigation = () => {
 
   const CustomTabBarButton = () => {
     return (
-      <Pressable>
+      <Pressable style={{marginBottom: 10}}>
         <Icon name="emoticon-happy" size={35} color="#fcba01"/>
       </Pressable>
     )
@@ -19,31 +20,32 @@ const RootNavigation = () => {
 
   return (
     <Tab.Navigator
+    initialRouteName='Anasayfa'
       screenOptions={{
         headerShown: false, tabBarActiveTintColor: "#fcba01",
         tabBarInactiveTintColor: "#959595",
       }}
     >
-      <Tab.Screen name='Home' component={HomePage} options={{
+      <Tab.Screen name='Anasayfa' component={HomeStack} options={{
         tabBarIcon: ({ color }) => (
           <Icon name="home" size={35} color={color} />
         )
       }} />
-      <Tab.Screen name='Varlıklarım' component={HomePage} options={{
+      <Tab.Screen name='Varlıklarım' component={LogoutPage} options={{
         tabBarIcon: ({ color }) => (
           <Icon name="package" size={35} color={color} />
         )
       }} />
-      <Tab.Screen name='smile' component={HomePage}
+      <Tab.Screen name='smile' component={LogoutPage}
         options={{
           tabBarButton: (props) => <CustomTabBarButton {...props} />
         }} />
-      <Tab.Screen name='Benim Yerim' component={HomePage} options={{
+      <Tab.Screen name='Benim Yerim' component={LogoutPage} options={{
         tabBarIcon: ({ color }) => (
           <Icon name="web" size={35} color={color} />
         )
       }} />
-      <Tab.Screen name='Tüm İşlemler' component={HomePage} options={{
+      <Tab.Screen name='Tüm İşlemler' component={LogoutPage} options={{
         tabBarIcon: ({ color }) => (
           <Icon name="format-list-bulleted" size={35} color={color} />
         )
