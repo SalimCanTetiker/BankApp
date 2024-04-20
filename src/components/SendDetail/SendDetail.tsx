@@ -1,10 +1,14 @@
 import { View, Text, TextInput, ScrollView } from 'react-native'
 import React, { useState } from 'react'
 
+import { useSelector } from 'react-redux'
+
 import styles from './SendDetail.style'
 import ModalComponent from '../ModalComponent/ModalComponent'
 
 const SendDetail = () => {
+
+    const balance = useSelector(state => state.balance.total)
 
     const [ıban, setIban] = useState("")
     const [amount, setAmount] = useState("")
@@ -21,7 +25,7 @@ const SendDetail = () => {
                 <Text>Bakiye</Text>
             </View>
             <View style={styles.amount}>
-                <Text>0,00 TL </Text>
+                <Text>{balance}</Text>
             </View>
             <Text style={styles.header}>Alıcı Bilgileri</Text>
             <View style={styles.choice}>

@@ -1,5 +1,6 @@
 import { View, Text, Pressable } from 'react-native'
 import React from 'react'
+import { useSelector } from 'react-redux'
 
 import { useNavigation } from '@react-navigation/native'
 
@@ -8,6 +9,8 @@ import styles from './Accounts.style'
 const Accounts = () => {
 
     const navigation = useNavigation()
+
+    const balance = useSelector((state) => state.balance.total)
 
     return (
         <View style={styles.container}>
@@ -22,8 +25,8 @@ const Accounts = () => {
                     <Text>Kullanılabilir Bakiye</Text>
                 </View>
                 <View style={styles.amount}>
-                    <Text>0,00 TL </Text>
-                    <Text>0,00 TL</Text>
+                    <Text>{balance}</Text>
+                    <Text>{balance}</Text>
                 </View>
                 <View style={styles.choiceContainer}>
                     <Text style={styles.choiceText}>Ödemeler</Text>
