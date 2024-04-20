@@ -1,3 +1,22 @@
+#Bank App
+
+##Screenshots
+<img src="https://github.com/SalimCanTetiker/BankApp/assets/99422185/355a2225-cd4b-4ae2-a232-7b8027fedb45" width='250' height='500' />
+<img src="https://github.com/SalimCanTetiker/BankApp/assets/99422185/6e2bf090-ec8c-42b0-bb9c-851d034e9440" width='250' height='500' />
+<img src="https://github.com/SalimCanTetiker/BankApp/assets/99422185/f7b7132d-0081-4835-99d7-21f23827a0ea" width='250' height='500' />
+<img src="https://github.com/SalimCanTetiker/BankApp/assets/99422185/2f4ee5a6-e00b-4c5d-903c-5ddbc3712328" width='250' height='500' />
+<img src="https://github.com/SalimCanTetiker/BankApp/assets/99422185/5f768c6e-0350-4959-9f9d-2b681e04e989" width='250' height='500' />
+
+###tools
+firebase/app
+firebase/auth
+react navigation
+redux toolkit
+rredux
+formik
+react native modal
+vector icons
+
 This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
 
 # Getting Started
