@@ -31,6 +31,9 @@ const styles = StyleSheet.create({
         borderRadius: 5,
         margin: 12,
         padding: 12
+    },
+    modal: {
+        alignItems: "center"
     }
 })
 

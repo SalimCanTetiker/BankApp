@@ -12,6 +12,10 @@ const styles = StyleSheet.create({
         width: width * 0.7,
         alignItems: "center",
         backgroundColor: "#fcba01",
+    },
+    text: {
+        fontWeight: "bold",
+        fontSize: 18
     }
 })
 
