@@ -10,14 +10,14 @@
 
 ### tools
 
-firebase/app
-firebase/auth
-react navigation
-redux toolkit
-rredux
-formik
-react native modal
-vector icons
+* firebase/app
+* firebase/auth
+* react navigation
+* redux toolkit
+* redux
+* formik
+* react native modal
+* vector icons
 
 This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
 
