@@ -35,11 +35,11 @@ const Accounts = () => {
                     </Pressable>
                     <Text style={styles.choiceText}>Başvurular</Text>
                 </View>
-                <Text>Hesabın Son Hareketleri</Text>
+                <Text style={styles.title}>Hesabın Son Hareketleri</Text>
                 <View style={styles.movements}>
-                    <Text>Date</Text>
-                    <Text>açıklama</Text>
-                    <Text>miktar TL</Text>
+                    <Text style={styles.date}>14</Text>
+                    <Text style={styles.desc}>ATM</Text>
+                    <Text style={styles.price}>1.500,00 TL</Text>
                 </View>
                 <View style={styles.allMovement}>
                     <Text style={styles.accountText}>Tüm Hareketler</Text>

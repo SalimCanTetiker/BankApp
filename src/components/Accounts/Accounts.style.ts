@@ -53,13 +53,32 @@ const styles = StyleSheet.create({
         borderRadius: 8,
         borderColor: "#fcba01",
     },
+    title: {
+        fontWeight: "bold",
+        fontSize: 16,
+        right: 60
+    },
     movements: {
         flexDirection: "row",
-        marginTop: 40,
+        marginTop: 60,
         borderBottomWidth: 0.5,
     },
+    date: {
+        fontWeight: "bold",
+        fontSize: 24,
+        margin: 10,
+        right: 50,
+        bottom: 6
+    },
+    desc: {
+        margin: 10
+    },
+    price: {
+        margin: 10,
+        left: 50
+    },
     allMovement: {
-        marginTop: 100,
+        marginTop: 60,
         borderBottomWidth: 0.5,
     },
     account: {
