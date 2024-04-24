@@ -1,22 +1,54 @@
-import { StyleSheet } from "react-native";
+import { StyleSheet, Dimensions } from "react-native";
+
+const {height} = Dimensions.get("window")
 
 const styles = StyleSheet.create({
     modal: {
         flex: 1,
         backgroundColor: "white",
-        borderRadius: 10
+        borderRadius: 4
     },
-    text: {
-        fontWeight: "500",
+    header: {
+        backgroundColor: "#fcba01",
+        alignItems: "center",
+        marginTop: 20,
+        padding: 8,
+    },
+    headerText: {
+        fontWeight: "bold",
         fontSize: 20
     },
-    iban: {
-        alignItems: "center",
-        marginTop: 50
+    title: {
+        backgroundColor: "#f6f6f6",
+        height: height * 0.05,
+        margin: 2,
+        flexDirection: "row",
+        justifyContent: "space-between"
+    },
+    titleWhite: {
+        backgroundColor: "#ffffff",
+        height: height * 0.05,
+        margin: 2,
+        flexDirection: "row",
+        justifyContent: "space-between",
+    },
+    titleText: {
+        fontSize: 16,
+        marginTop: 10
+    },
+    text: {
+        fontSize: 15,
+        right: 15,
+        marginTop: 10,
+        color: "#a1a19a"
+    },
+    desc: {
+        fontSize: 15,
+        color: "#a1a19a"
     },
     okButton: {
         alignItems: "center",
-        marginTop: 100
+        top: 200
     },
     image: {
         width: 50,
@@ -28,8 +60,8 @@ const styles = StyleSheet.create({
     },
     logo: {
         flexDirection: "row",
-        left: 100,
-        marginTop: 50
+        left: 10,
+        marginTop: 30
     },
 })
 

@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 
 const initialState = {
-    total: 0,
+    total: 20000,
   };
 
 
@@ -11,7 +11,7 @@ const Slice = createSlice({
     initialState,
     reducers: {
         addBalance(state, action){
-            state.total = parseInt(state.total) + parseInt(action.payload);
+            state.total -= parseInt(action.payload);
         }
     }
 })

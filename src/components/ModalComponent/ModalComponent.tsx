@@ -1,7 +1,8 @@
 import { View, Text, Image } from 'react-native'
 import React, { useState } from 'react'
 import Modal from "react-native-modal"
-import { useDispatch, useSelector } from 'react-redux'
+import { useNavigation } from '@react-navigation/native'
+import { useDispatch } from 'react-redux'
 
 import CustomButton from '../CustomButton/CustomButton';
 
@@ -11,14 +12,16 @@ import { addBalance } from '../../redux/Slice';
 
 const ModalComponent = ({ ıbanİnfo, amountİnfo, descriptionİnfo }) => {
 
+  const navigation = useNavigation()
+
   const dispatch = useDispatch();
 
   const [isModalVisible, setModalVisible] = useState(false);
 
-  const toggleModal = () => {
-    setModalVisible(!isModalVisible);
-  };
-
+  const handleOkButton = () => {
+    setModalVisible(false)
+    navigation.navigate("Home")
+  }
   const handleApproved = () => {
     setModalVisible(true)
     dispatch(addBalance(amountİnfo))
@@ -37,20 +40,34 @@ const ModalComponent = ({ ıbanİnfo, amountİnfo, descriptionİnfo }) => {
             />
             <Text style={styles.logoText}>Vakıfbank</Text>
           </View>
-          <View style={styles.iban}>
-            <Text style={styles.text}>Hello!</Text>
+          <View style={styles.header}>
+            <Text style={styles.headerText}>VAKIFBANK</Text>
           </View>
-          <View style={styles.iban}>
-            <Text style={styles.text}>{ıbanİnfo}</Text>
+          <View style={styles.title}>
+            <Text style={styles.titleText}>İŞLEM BİLGİLERİ</Text>
           </View>
-          <View style={styles.iban}>
+          <View style={styles.titleWhite}>
+            <Text style={styles.titleText}>İŞLEM TÜRÜ</Text>
+            <Text style={styles.text}>Havale</Text>
+          </View>
+          <View style={styles.title}>
+            <Text style={styles.titleText}>MİKTARI</Text>
             <Text style={styles.text}>{amountİnfo}</Text>
           </View>
-          <View style={styles.iban}>
-            <Text style={styles.text}>{descriptionİnfo}</Text>
+          <View style={styles.titleWhite}>
+            <Text style={styles.titleText}>HESAP NO</Text>
+            <Text style={styles.text}>{ıbanİnfo}</Text>
           </View>
+          <View style={styles.title}>
+            <Text style={styles.titleText}>FİŞ NO</Text>
+            <Text style={styles.text}>0</Text>
+          </View>
+          <View style={styles.title}>
+            <Text style={styles.titleText}>İŞLEM AÇIKLAMASI</Text>
+          </View>
+          <Text style={styles.desc}>TR** **** **** hesabından {descriptionİnfo} açıklamasıyla havale yapıldı.</Text>
           <View style={styles.okButton}>
-            <CustomButton title="Ok" onPress={toggleModal} />
+            <CustomButton title="Ok" onPress={handleOkButton} />
           </View>
         </View>
       </Modal>
