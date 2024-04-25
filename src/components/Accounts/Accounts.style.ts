@@ -63,26 +63,17 @@ const styles = StyleSheet.create({
         marginTop: 60,
         borderBottomWidth: 0.5,
     },
-    date: {
-        fontWeight: "bold",
-        fontSize: 24,
-        margin: 10,
-        right: 50,
-        bottom: 6
-    },
-    desc: {
-        margin: 10
-    },
-    price: {
-        margin: 10,
-        left: 50
+    lastMove: {
+        marginTop: 30,
+        height: height * 0.16,
+        width: width * 0.8
     },
     allMovement: {
-        marginTop: 60,
+        marginTop: 30,
         borderBottomWidth: 0.5,
     },
     account: {
-        marginTop: 40,
+        marginTop: 20,
         borderBottomWidth: 0.5,
     },
     accountText: {

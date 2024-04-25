@@ -5,6 +5,7 @@ import { useSelector } from 'react-redux'
 import { useNavigation } from '@react-navigation/native'
 
 import styles from './Accounts.style'
+import LastMove from '../LastMove/LastMove'
 
 const Accounts = () => {
 
@@ -36,10 +37,8 @@ const Accounts = () => {
                     <Text style={styles.choiceText}>Başvurular</Text>
                 </View>
                 <Text style={styles.title}>Hesabın Son Hareketleri</Text>
-                <View style={styles.movements}>
-                    <Text style={styles.date}>14</Text>
-                    <Text style={styles.desc}>ATM</Text>
-                    <Text style={styles.price}>1.500,00 TL</Text>
+                <View style={styles.lastMove}>
+                    <LastMove/>
                 </View>
                 <View style={styles.allMovement}>
                     <Text style={styles.accountText}>Tüm Hareketler</Text>

@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 import Modal from "react-native-modal"
 import { useNavigation } from '@react-navigation/native'
 import { useDispatch } from 'react-redux'
+import firestore from '@react-native-firebase/firestore';
 
 import CustomButton from '../CustomButton/CustomButton';
 
@@ -18,10 +19,21 @@ const ModalComponent = ({ ıbanİnfo, amountİnfo, descriptionİnfo }) => {
 
   const [isModalVisible, setModalVisible] = useState(false);
 
+  const currentDate = new Date()
+
   const handleOkButton = () => {
     setModalVisible(false)
     navigation.navigate("Home")
+    firestore().collection("move").add({
+      date: currentDate,
+      desc: descriptionİnfo ,
+      amount:  amountİnfo ,
+    })
+      .then(() => {
+        console.log('Move added!');
+      })
   }
+  
   const handleApproved = () => {
     setModalVisible(true)
     dispatch(addBalance(amountİnfo))
