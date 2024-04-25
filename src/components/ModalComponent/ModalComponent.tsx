@@ -26,14 +26,14 @@ const ModalComponent = ({ ıbanİnfo, amountİnfo, descriptionİnfo }) => {
     navigation.navigate("Home")
     firestore().collection("move").add({
       date: currentDate,
-      desc: descriptionİnfo ,
-      amount:  amountİnfo ,
+      desc: descriptionİnfo,
+      amount: amountİnfo,
     })
       .then(() => {
         console.log('Move added!');
       })
   }
-  
+
   const handleApproved = () => {
     setModalVisible(true)
     dispatch(addBalance(amountİnfo))
@@ -52,36 +52,43 @@ const ModalComponent = ({ ıbanİnfo, amountİnfo, descriptionİnfo }) => {
             />
             <Text style={styles.logoText}>Vakıfbank</Text>
           </View>
-          <View style={styles.header}>
-            <Text style={styles.headerText}>VAKIFBANK</Text>
+          <View style={styles.logoSecond}>
+            <Text style={styles.logoSecondText}>Şubesiz Bankacılık</Text>
           </View>
-          <View style={styles.title}>
-            <Text style={styles.titleText}>İŞLEM BİLGİLERİ</Text>
+            <View style={styles.header}>
+              <Text style={styles.headerText}>VAKIFBANK</Text>
+            </View>
+            <View style={styles.title}>
+              <Text style={styles.titleText}>İŞLEM BİLGİLERİ</Text>
+            </View>
+            <View style={styles.titleWhite}>
+              <Text style={styles.titleText}>İŞLEM TÜRÜ</Text>
+              <Text style={styles.text}>Havale</Text>
+              <Text style={styles.titleText}>İŞLEM TARİHİ</Text>
+              <Text style={styles.text}>{new Date().toLocaleDateString()}</Text>
+            </View>
+            <View style={styles.title}>
+              <Text style={styles.titleText}>MİKTARI</Text>
+              <Text style={styles.text}>{amountİnfo}</Text>
+              <Text style={styles.titleText}>İŞLEM SAATİ</Text>
+              <Text style={styles.text}>{new Date().toLocaleTimeString()}</Text>
+            </View>
+            <View style={styles.titleWhite}>
+              <Text style={styles.titleText}>HESAP NO</Text>
+              <Text style={styles.text}>{ıbanİnfo}</Text>
+            </View>
+            <View style={styles.title}>
+              <Text style={styles.titleText}>FİŞ NO</Text>
+              <Text style={styles.text}>0</Text>
+            </View>
+            <View style={styles.title}>
+              <Text style={styles.titleText}>İŞLEM AÇIKLAMASI</Text>
+            </View>
+            <Text style={styles.desc}>TR** **** **** hesabından {descriptionİnfo} açıklamasıyla havale yapıldı.</Text>
+            <View style={styles.okButton}>
+              <CustomButton title="Ok" onPress={handleOkButton} />
+            </View>
           </View>
-          <View style={styles.titleWhite}>
-            <Text style={styles.titleText}>İŞLEM TÜRÜ</Text>
-            <Text style={styles.text}>Havale</Text>
-          </View>
-          <View style={styles.title}>
-            <Text style={styles.titleText}>MİKTARI</Text>
-            <Text style={styles.text}>{amountİnfo}</Text>
-          </View>
-          <View style={styles.titleWhite}>
-            <Text style={styles.titleText}>HESAP NO</Text>
-            <Text style={styles.text}>{ıbanİnfo}</Text>
-          </View>
-          <View style={styles.title}>
-            <Text style={styles.titleText}>FİŞ NO</Text>
-            <Text style={styles.text}>0</Text>
-          </View>
-          <View style={styles.title}>
-            <Text style={styles.titleText}>İŞLEM AÇIKLAMASI</Text>
-          </View>
-          <Text style={styles.desc}>TR** **** **** hesabından {descriptionİnfo} açıklamasıyla havale yapıldı.</Text>
-          <View style={styles.okButton}>
-            <CustomButton title="Ok" onPress={handleOkButton} />
-          </View>
-        </View>
       </Modal>
     </View>
   )

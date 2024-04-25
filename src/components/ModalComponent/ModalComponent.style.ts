@@ -1,6 +1,6 @@
 import { StyleSheet, Dimensions } from "react-native";
 
-const {height} = Dimensions.get("window")
+const {height, width} = Dimensions.get("window")
 
 const styles = StyleSheet.create({
     modal: {
@@ -38,7 +38,6 @@ const styles = StyleSheet.create({
     },
     text: {
         fontSize: 15,
-        right: 15,
         marginTop: 10,
         color: "#a1a19a"
     },
@@ -62,6 +61,20 @@ const styles = StyleSheet.create({
         flexDirection: "row",
         left: 10,
         marginTop: 30
+    },
+    logoSecond: {
+        borderWidth: 0.5,
+        borderRadius: 8,
+        backgroundColor: "black",
+        width: width * 0.36,
+        left: 200,
+        padding: 8,
+        bottom: 48
+    },
+    logoSecondText: {
+        color: "#fcba01",
+        fontWeight: "bold",
+        fontSize: 14
     },
 })
 
